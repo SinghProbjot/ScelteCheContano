@@ -1,6 +1,6 @@
 # Scelte che Cont@no
 
-Questo progetto è il **prototipo di un'applicazione web educativa**, sviluppata nell'ambito del **bando ministeriale _Saper(e)Consumare 2025_** per l’:contentReference[oaicite:0]{index=0} di Bergamo.
+Questo progetto è il **prototipo di un'applicazione web educativa**, sviluppata nell'ambito del **bando ministeriale _Saper(e)Consumare 2025_**.
 
 L’obiettivo dell’app è **puramente educativo**: promuovere la consapevolezza sui meccanismi che influenzano le scelte di consumo (pubblicità, algoritmi, profilazione) e guidare gli utenti verso **decisioni di acquisto più responsabili e sostenibili**.
 
