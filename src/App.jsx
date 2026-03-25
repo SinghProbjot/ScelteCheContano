@@ -24,6 +24,7 @@ const DATABASE_PRODOTTI = [
   {
     id: 1,
     categoria: "Pasta",
+    sottocategoria: "Pasta",
     nome: "Pasta Bio Km0",
     prezzo: 1.8,
     sostenibilita: 9,
@@ -42,6 +43,7 @@ const DATABASE_PRODOTTI = [
   {
     id: 2,
     categoria: "Pasta",
+    sottocategoria: "Pasta",
     nome: "Pasta Sottomarca",
     prezzo: 0.6,
     sostenibilita: 3,
@@ -60,6 +62,7 @@ const DATABASE_PRODOTTI = [
   {
     id: 3,
     categoria: "Pasta",
+    sottocategoria: "Pasta",
     nome: "Pasta Classica",
     prezzo: 1.1,
     sostenibilita: 5,
@@ -75,10 +78,30 @@ const DATABASE_PRODOTTI = [
       sale: 0.02,
     },
   },
+  {
+    id: 10,
+    categoria: "Latte",
+    sottocategoria: "Latte",
+    nome: "Latte Arricchito",
+    prezzo: 1.6,
+    sostenibilita: 5,
+    locale: false,
+    brand: "LatteTop",
+    nutrizionale: "B",
+    packaging: "Bottiglia Plastica",
+    valori: {
+      kcal: 50,
+      grassi: 1.8,
+      carboidrati: 5.2,
+      proteine: 3.5,
+      sale: 0.1,
+    },
+  },
 
   {
     id: 4,
     categoria: "Latte",
+    sottocategoria: "Latte",
     nome: "Latte Fresco Val Seriana",
     prezzo: 1.9,
     sostenibilita: 8,
@@ -97,6 +120,7 @@ const DATABASE_PRODOTTI = [
   {
     id: 5,
     categoria: "Latte",
+    sottocategoria: "Latte",
     nome: "Latte UHT",
     prezzo: 0.9,
     sostenibilita: 4,
@@ -116,6 +140,7 @@ const DATABASE_PRODOTTI = [
   {
     id: 6,
     categoria: "Biscotti",
+    sottocategoria: "Biscotti",
     nome: "Frollini Artigianali",
     prezzo: 3.5,
     sostenibilita: 8,
@@ -128,7 +153,8 @@ const DATABASE_PRODOTTI = [
   {
     id: 7,
     categoria: "Biscotti",
-    nome: "Biscotti con Olio di Palma",
+    sottocategoria: "Biscotti",
+    nome: "Biscotti Sottomarca",
     prezzo: 1.2,
     sostenibilita: 2,
     locale: false,
@@ -137,10 +163,30 @@ const DATABASE_PRODOTTI = [
     packaging: "Plastica Multistrato",
     valori: { kcal: 510, grassi: 25, carboidrati: 68, proteine: 5, sale: 1.2 },
   },
+  {
+    id: 11,
+    categoria: "Biscotti",
+    sottocategoria: "Biscotti",
+    nome: "Frollini Classici",
+    prezzo: 2.2,
+    sostenibilita: 4,
+    locale: false,
+    brand: "Mulino Famoso",
+    nutrizionale: "D",
+    packaging: "Plastica Riciclabile",
+    valori: {
+      kcal: 480,
+      grassi: 20,
+      carboidrati: 66,
+      proteine: 5.5,
+      sale: 0.8,
+    },
+  },
 
   {
     id: 8,
     categoria: "Frutta",
+    sottocategoria: "Mela",
     nome: "Mele del Trentino",
     prezzo: 2.0,
     sostenibilita: 9,
@@ -159,6 +205,7 @@ const DATABASE_PRODOTTI = [
   {
     id: 9,
     categoria: "Frutta",
+    sottocategoria: "Banana",
     nome: "Banane Sudamerica",
     prezzo: 1.5,
     sostenibilita: 4,
@@ -172,6 +219,247 @@ const DATABASE_PRODOTTI = [
       carboidrati: 23,
       proteine: 1.1,
       sale: 0.01,
+    },
+  },
+  {
+    id: 12,
+    categoria: "Frutta",
+    sottocategoria: "Fragola",
+    nome: "Fragole Esotiche",
+    prezzo: 3.5,
+    sostenibilita: 3,
+    locale: false,
+    brand: "GigaFruit",
+    nutrizionale: "A",
+    packaging: "Cestino Plastica Rigida",
+    valori: {
+      kcal: 32,
+      grassi: 0.3,
+      carboidrati: 7.7,
+      proteine: 0.7,
+      sale: 0.0,
+    },
+  },
+  {
+    id: 13,
+    categoria: "Pasta",
+    sottocategoria: "Pasta",
+    nome: "Pasta Integrale Bio",
+    prezzo: 1.3,
+    sostenibilita: 8,
+    locale: false,
+    brand: "Natura Vera",
+    nutrizionale: "A",
+    packaging: "Cartone Riciclato",
+    valori: {
+      kcal: 340,
+      grassi: 2.0,
+      carboidrati: 65,
+      proteine: 14,
+      sale: 0.01,
+    },
+  },
+  {
+    id: 14,
+    categoria: "Latte",
+    sottocategoria: "Latte",
+    nome: "Bevanda di Avena Bio",
+    prezzo: 1.8,
+    sostenibilita: 9,
+    locale: false,
+    brand: "EcoSoy",
+    nutrizionale: "A",
+    packaging: "TetraPak Eco",
+    valori: {
+      kcal: 45,
+      grassi: 1.5,
+      carboidrati: 6.0,
+      proteine: 3.0,
+      sale: 0.05,
+    },
+  },
+  {
+    id: 15,
+    categoria: "Biscotti",
+    sottocategoria: "Biscotti",
+    nome: "Biscotti Vegani",
+    prezzo: 2.6,
+    sostenibilita: 8,
+    locale: false,
+    brand: "Dolci Natura",
+    nutrizionale: "B",
+    packaging: "Carta Riciclabile",
+    valori: { kcal: 430, grassi: 14, carboidrati: 68, proteine: 7, sale: 0.3 },
+  },
+  {
+    id: 16,
+    categoria: "Frutta",
+    sottocategoria: "Arancia",
+    nome: "Arance Bio",
+    prezzo: 2.2,
+    sostenibilita: 8,
+    locale: false,
+    brand: "BioFrutta",
+    nutrizionale: "A",
+    packaging: "Rete di Cotone",
+    valori: {
+      kcal: 47,
+      grassi: 0.1,
+      carboidrati: 12,
+      proteine: 0.9,
+      sale: 0.0,
+    },
+  },
+  {
+    id: 17,
+    categoria: "Frutta",
+    sottocategoria: "Mela",
+    nome: "Mele Sottomarca",
+    prezzo: 1.2,
+    sostenibilita: 3,
+    locale: false,
+    brand: "Discount Frutta",
+    nutrizionale: "A",
+    packaging: "Retina di Plastica",
+    valori: {
+      kcal: 52,
+      grassi: 0.2,
+      carboidrati: 14,
+      proteine: 0.3,
+      sale: 0.0,
+    },
+  },
+  {
+    id: 18,
+    categoria: "Frutta",
+    sottocategoria: "Mela",
+    nome: "Mele Golden",
+    prezzo: 1.6,
+    sostenibilita: 5,
+    locale: false,
+    brand: "Marca Famosa",
+    nutrizionale: "A",
+    packaging: "Vassoio di Cartone",
+    valori: {
+      kcal: 52,
+      grassi: 0.2,
+      carboidrati: 14,
+      proteine: 0.3,
+      sale: 0.0,
+    },
+  },
+  {
+    id: 19,
+    categoria: "Frutta",
+    sottocategoria: "Banana",
+    nome: "Banane Bio Fairtrade",
+    prezzo: 2.5,
+    sostenibilita: 8,
+    locale: false,
+    brand: "EcoBanana",
+    nutrizionale: "A",
+    packaging: "Fascetta di Carta",
+    valori: {
+      kcal: 89,
+      grassi: 0.3,
+      carboidrati: 23,
+      proteine: 1.1,
+      sale: 0.01,
+    },
+  },
+  {
+    id: 20,
+    categoria: "Frutta",
+    sottocategoria: "Banana",
+    nome: "Banane Primo Prezzo",
+    prezzo: 0.9,
+    sostenibilita: 2,
+    locale: false,
+    brand: "Discount Frutta",
+    nutrizionale: "A",
+    packaging: "Sacchetto di Plastica",
+    valori: {
+      kcal: 89,
+      grassi: 0.3,
+      carboidrati: 23,
+      proteine: 1.1,
+      sale: 0.01,
+    },
+  },
+  {
+    id: 21,
+    categoria: "Frutta",
+    sottocategoria: "Fragola",
+    nome: "Fragole Locali Bio",
+    prezzo: 4.5,
+    sostenibilita: 9,
+    locale: true,
+    brand: "Agricola Bergamo",
+    nutrizionale: "A",
+    packaging: "Cestino di Cartone",
+    valori: {
+      kcal: 32,
+      grassi: 0.3,
+      carboidrati: 7.7,
+      proteine: 0.7,
+      sale: 0.0,
+    },
+  },
+  {
+    id: 22,
+    categoria: "Frutta",
+    sottocategoria: "Fragola",
+    nome: "Fragole Standard",
+    prezzo: 2.5,
+    sostenibilita: 4,
+    locale: false,
+    brand: "Serra Gialla",
+    nutrizionale: "A",
+    packaging: "Cestino Plastica Rigida",
+    valori: {
+      kcal: 32,
+      grassi: 0.3,
+      carboidrati: 7.7,
+      proteine: 0.7,
+      sale: 0.0,
+    },
+  },
+  {
+    id: 23,
+    categoria: "Frutta",
+    sottocategoria: "Arancia",
+    nome: "Arance di Sicilia",
+    prezzo: 2.0,
+    sostenibilita: 8,
+    locale: true,
+    brand: "Agrumi Sud",
+    nutrizionale: "A",
+    packaging: "Rete di Cotone",
+    valori: {
+      kcal: 47,
+      grassi: 0.1,
+      carboidrati: 12,
+      proteine: 0.9,
+      sale: 0.0,
+    },
+  },
+  {
+    id: 24,
+    categoria: "Frutta",
+    sottocategoria: "Arancia",
+    nome: "Arance Importate",
+    prezzo: 1.2,
+    sostenibilita: 3,
+    locale: false,
+    brand: "Global Fruit",
+    nutrizionale: "A",
+    packaging: "Rete di Plastica",
+    valori: {
+      kcal: 47,
+      grassi: 0.1,
+      carboidrati: 12,
+      proteine: 0.9,
+      sale: 0.0,
     },
   },
 ];
@@ -260,47 +548,196 @@ export default function App() {
   };
 
   const generaCarrelli = () => {
+    // Punteggio assegnato in base ai filtri scelti dall'utente
+    const calcolaScoreUtente = (p) => {
+      let score = 0;
+      const noFiltri =
+        !filtri.locale && !filtri.sostenibile && !filtri.risparmio;
+
+      if (filtri.locale) score += p.locale ? 20 : 0;
+      if (filtri.sostenibile) score += p.sostenibilita * 3;
+      if (filtri.risparmio) score += (10 - p.prezzo) * 4;
+
+      if (noFiltri) {
+        score += 10 - p.prezzo + p.sostenibilita;
+      }
+      return score;
+    };
+
+    // Seleziona il prodotto giusto in base all'archetipo desiderato
+    const pickProd = (tipo, prods, prodsToAvoid) => {
+      let availableProds = prods.filter((p) => !prodsToAvoid.includes(p.id));
+      if (availableProds.length === 0) availableProds = prods; // Fallback se non ci sono alternative
+
+      if (tipo === "etica") {
+        const bestAv = [...availableProds].sort(
+          (a, b) => b.sostenibilita - a.sostenibilita,
+        )[0];
+        // Evitiamo che il carrello etico abbia uno score basso solo per non ripetersi
+        if (bestAv && bestAv.sostenibilita <= 5) {
+          return [...prods].sort(
+            (a, b) => b.sostenibilita - a.sostenibilita,
+          )[0];
+        }
+        return bestAv;
+      }
+
+      if (tipo === "km0") {
+        const locals = availableProds.filter((p) => p.locale);
+        if (locals.length > 0) {
+          return locals.sort((a, b) => b.sostenibilita - a.sostenibilita)[0];
+        } else {
+          // Se non c'è km0 disponibile, ignora l'esclusione e ripescalo dai totali
+          const allLocals = prods.filter((p) => p.locale);
+          if (allLocals.length > 0)
+            return allLocals.sort(
+              (a, b) => b.sostenibilita - a.sostenibilita,
+            )[0];
+          return [...availableProds].sort(
+            (a, b) => b.sostenibilita - a.sostenibilita,
+          )[0];
+        }
+      }
+
+      if (tipo === "risparmio") {
+        const bestAv = [...availableProds].sort(
+          (a, b) => a.prezzo - b.prezzo,
+        )[0];
+        const absBest = [...prods].sort((a, b) => a.prezzo - b.prezzo)[0];
+        // Evitiamo che il carrello economico proponga un prodotto costoso solo per differenziarsi
+        if (bestAv && absBest && bestAv.prezzo > absBest.prezzo * 1.5) {
+          return absBest;
+        }
+        return bestAv;
+      }
+
+      if (tipo === "commerciale") {
+        const cheapest = [...prods].sort((a, b) => a.prezzo - b.prezzo)[0];
+        const eco = [...prods].sort(
+          (a, b) => b.sostenibilita - a.sostenibilita,
+        )[0];
+        const remaining = availableProds.filter(
+          (p) => p.id !== cheapest.id && p.id !== eco.id,
+        );
+        return remaining.length > 0
+          ? remaining[0]
+          : availableProds.find((p) => p.id !== cheapest.id) ||
+              availableProds[0];
+      }
+      return availableProds[0];
+    };
+
+    let tipoAlt1 = "etica";
+    let nomeAlt1 = "Alternativa Etica";
+    let tipoAlt2 = "risparmio";
+    let nomeAlt2 = "Alternativa Risparmio";
+
+    // Definiamo i carrelli alternativi basandoci per contrasto sulle preferenze utente
+    if (filtri.sostenibile && !filtri.locale && !filtri.risparmio) {
+      tipoAlt1 = "km0";
+      nomeAlt1 = "Alternativa Km0";
+      tipoAlt2 = "risparmio";
+      nomeAlt2 = "Alternativa Risparmio";
+    } else if (filtri.locale && !filtri.sostenibile && !filtri.risparmio) {
+      tipoAlt1 = "etica";
+      nomeAlt1 = "Alternativa Sostenibile";
+      tipoAlt2 = "risparmio";
+      nomeAlt2 = "Alternativa Risparmio";
+    } else if (filtri.risparmio && !filtri.sostenibile && !filtri.locale) {
+      tipoAlt1 = "etica";
+      nomeAlt1 = "Alternativa Etica";
+      tipoAlt2 = "commerciale";
+      nomeAlt2 = "Brand Sponsorizzati";
+    } else if ((filtri.sostenibile || filtri.locale) && !filtri.risparmio) {
+      tipoAlt1 = "risparmio";
+      nomeAlt1 = "Alternativa Risparmio";
+      tipoAlt2 = "commerciale";
+      nomeAlt2 = "Brand Sponsorizzati";
+    } else if (filtri.risparmio && (filtri.sostenibile || filtri.locale)) {
+      tipoAlt1 = "commerciale";
+      nomeAlt1 = "Brand Sponsorizzati";
+      tipoAlt2 = filtri.sostenibile ? "km0" : "etica";
+      nomeAlt2 = filtri.sostenibile
+        ? "Alternativa Km0"
+        : "Estrema Sostenibilità";
+    }
+
     const carrelloUtente = {
-      nome: "Il Tuo Carrello",
+      nome: "Le Tue Scelte",
       prodotti: [...listaSpesa],
       totale: stimaCostoAttuale,
       scoreSos: 0,
     };
     const carrelloEconomico = {
-      nome: "Alternativa Risparmio",
+      nome: nomeAlt1,
       prodotti: [],
       totale: 0,
       scoreSos: 0,
     };
     const carrelloSostenibile = {
-      nome: "Alternativa Etica",
+      nome: nomeAlt2,
       prodotti: [],
       totale: 0,
       scoreSos: 0,
     };
 
+    carrelloUtente.prodotti = []; // Svuotiamo i vecchi dati, li popoliamo ottimizzati
+    carrelloUtente.totale = 0;
+    carrelloUtente.scoreSos = 0;
+
     listaSpesa.forEach((itemScelto) => {
-      carrelloUtente.scoreSos += itemScelto.sostenibilita;
-      const prodottiCat = DATABASE_PRODOTTI.filter(
-        (p) => p.categoria === itemScelto.categoria,
+      const chiaveFiltro = itemScelto.isGeneric
+        ? "categoria"
+        : "sottocategoria";
+      const valoreFiltro = itemScelto.isGeneric
+        ? itemScelto.categoria
+        : itemScelto.sottocategoria;
+
+      let prodottiCat = DATABASE_PRODOTTI.filter(
+        (p) => p[chiaveFiltro] === valoreFiltro,
       );
 
-      const minPriceProd = [...prodottiCat].sort(
-        (a, b) => a.prezzo - b.prezzo,
-      )[0];
-      if (minPriceProd) {
-        carrelloEconomico.prodotti.push(minPriceProd);
-        carrelloEconomico.totale += minPriceProd.prezzo;
-        carrelloEconomico.scoreSos += minPriceProd.sostenibilita;
+      if (prodottiCat.length < 3 && !itemScelto.isGeneric) {
+        prodottiCat = DATABASE_PRODOTTI.filter(
+          (p) => p.categoria === itemScelto.categoria,
+        );
       }
 
-      const maxSosProd = [...prodottiCat].sort(
-        (a, b) => b.sostenibilita - a.sostenibilita,
-      )[0];
-      if (maxSosProd) {
-        carrelloSostenibile.prodotti.push(maxSosProd);
-        carrelloSostenibile.totale += maxSosProd.prezzo;
-        carrelloSostenibile.scoreSos += maxSosProd.sostenibilita;
+      // --- 1. PRODOTTO UTENTE ---
+      // Se l'ha selezionato esplicitamente lo manteniamo. Se generico, l'IA seleziona con i filtri
+      let prodUtente = itemScelto;
+      if (itemScelto.isGeneric) {
+        prodUtente = [...prodottiCat].sort(
+          (a, b) => calcolaScoreUtente(b) - calcolaScoreUtente(a),
+        )[0];
+      }
+
+      if (prodUtente) {
+        carrelloUtente.prodotti.push({
+          ...prodUtente,
+          wasGeneric: itemScelto.isGeneric,
+        });
+        carrelloUtente.totale += prodUtente.prezzo;
+        carrelloUtente.scoreSos += prodUtente.sostenibilita;
+      }
+
+      // --- 2. PRODOTTO ALT 1 ---
+      let prodAlt1 = pickProd(tipoAlt1, prodottiCat, [prodUtente?.id]);
+      if (prodAlt1) {
+        carrelloEconomico.prodotti.push(prodAlt1);
+        carrelloEconomico.totale += prodAlt1.prezzo;
+        carrelloEconomico.scoreSos += prodAlt1.sostenibilita;
+      }
+
+      // --- 3. PRODOTTO ALT 2 ---
+      let prodAlt2 = pickProd(tipoAlt2, prodottiCat, [
+        prodUtente?.id,
+        prodAlt1?.id,
+      ]);
+      if (prodAlt2) {
+        carrelloSostenibile.prodotti.push(prodAlt2);
+        carrelloSostenibile.totale += prodAlt2.prezzo;
+        carrelloSostenibile.scoreSos += prodAlt2.sostenibilita;
       }
     });
 
@@ -942,102 +1379,176 @@ export default function App() {
           </button>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-6">
-          {carrelli.map((carrello, idx) => (
-            <div
-              key={idx}
-              className={`p-6 rounded-3xl border-2 shadow-sm relative overflow-hidden flex flex-col ${
-                idx === 0
-                  ? "border-gray-300 bg-white"
-                  : idx === 1
-                    ? "border-green-400 bg-green-50/40"
-                    : "border-blue-400 bg-blue-50/40"
-              }`}
-            >
-              <div
-                className={`absolute top-0 right-0 px-4 py-1.5 rounded-bl-xl font-bold text-xs text-white shadow-sm ${
-                  idx === 0
-                    ? "bg-gray-600"
-                    : idx === 1
-                      ? "bg-green-500"
-                      : "bg-blue-500"
-                }`}
-              >
-                {idx === 0
-                  ? "Le Tue Scelte"
-                  : idx === 1
-                    ? "Scelta Etica"
-                    : "Scelta Economica"}
-              </div>
-
-              <div className="mb-6 mt-3">
-                <h3 className="text-2xl font-bold text-gray-800">
-                  {carrello.nome}
-                </h3>
-                <div className="flex items-center gap-3 mt-3">
-                  <span
-                    className={`px-3 py-1 rounded-lg text-sm font-bold border flex items-center shadow-sm ${idx === 0 ? "bg-gray-50 border-gray-200 text-gray-700" : "bg-white border-white"}`}
-                  >
-                    <Leaf
-                      size={14}
-                      className={`mr-1.5 ${idx === 0 ? "text-gray-500" : "text-green-500"}`}
-                    />{" "}
-                    Eco Score: {carrello.scoreSos}/10
+        <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 mb-8">
+          <h3 className="font-bold text-gray-800 mb-4 text-lg">
+            Riepilogo Profilazione
+          </h3>
+          <div className="flex flex-col sm:flex-row gap-6">
+            <div className="flex-1">
+              <span className="text-xs text-gray-500 font-bold uppercase tracking-wider block mb-2">
+                I tuoi Filtri:
+              </span>
+              <div className="flex flex-wrap gap-2">
+                {filtri.locale && (
+                  <span className="px-3 py-1.5 bg-orange-100 text-orange-700 text-xs font-bold rounded-lg flex items-center gap-1.5 border border-orange-200">
+                    <MapPin size={14} /> Km0 / Locale
                   </span>
-                </div>
+                )}
+                {filtri.sostenibile && (
+                  <span className="px-3 py-1.5 bg-green-100 text-green-700 text-xs font-bold rounded-lg flex items-center gap-1.5 border border-green-200">
+                    <Leaf size={14} /> Alta Sostenibilità
+                  </span>
+                )}
+                {filtri.risparmio && (
+                  <span className="px-3 py-1.5 bg-blue-100 text-blue-700 text-xs font-bold rounded-lg flex items-center gap-1.5 border border-blue-200">
+                    <DollarSign size={14} /> Massimo Risparmio
+                  </span>
+                )}
+                {!filtri.locale && !filtri.sostenibile && !filtri.risparmio && (
+                  <span className="text-sm text-gray-400 italic">
+                    Nessun filtro specifico applicato
+                  </span>
+                )}
               </div>
-
-              <div className="p-4 bg-white rounded-2xl shadow-sm mb-6 border border-gray-100 flex justify-between items-center">
-                <span className="text-gray-500 font-medium text-sm uppercase tracking-wider">
-                  Totale
-                </span>
-                <span
-                  className={`text-3xl font-black ${carrello.totale > budget ? "text-red-600" : "text-gray-900"}`}
-                >
-                  €{carrello.totale.toFixed(2)}
-                </span>
-              </div>
-
-              <div className="space-y-3 flex-1">
-                <p className="text-xs font-bold text-gray-400 uppercase tracking-wider pl-1">
-                  Prodotti:
-                </p>
-                {carrello.prodotti.map((prod, pIdx) => (
-                  <div
-                    key={pIdx}
-                    className="bg-white p-3 rounded-xl border border-gray-100 shadow-sm flex flex-col gap-2"
+            </div>
+            <div className="flex-1 border-t sm:border-t-0 sm:border-l border-gray-100 pt-4 sm:pt-0 sm:pl-6">
+              <span className="text-xs text-gray-500 font-bold uppercase tracking-wider block mb-2">
+                Il tuo Carrello Iniziale:
+              </span>
+              <div className="flex flex-wrap gap-2">
+                {listaSpesa.map((item, idx) => (
+                  <span
+                    key={idx}
+                    className="px-3 py-1.5 bg-gray-50 text-gray-700 text-xs font-medium rounded-lg border border-gray-200 shadow-sm flex items-center gap-1.5"
                   >
-                    <div className="flex justify-between items-start">
-                      <div>
-                        <p className="font-bold text-gray-800 text-sm flex items-center gap-1">
-                          {prod.nome}{" "}
-                          {prod.isGeneric && (
-                            <span className="px-1 py-0.5 bg-gray-200 text-gray-500 text-[9px] uppercase rounded-md">
-                              Gen
-                            </span>
-                          )}
-                        </p>
-                        <p className="text-[10px] text-gray-500 uppercase">
-                          {prod.brand} {prod.locale && "• KM0"}
-                        </p>
-                      </div>
-                      <span className="font-bold text-gray-700 bg-gray-50 px-2 py-1 rounded-lg border border-gray-100 text-xs">
-                        €{prod.prezzo.toFixed(2)}
+                    {item.nome}
+                    {item.isGeneric && (
+                      <span className="text-[9px] bg-gray-200 text-gray-500 px-1 py-0.5 rounded uppercase ml-1">
+                        Generico
                       </span>
-                    </div>
-                    {!prod.isGeneric && (
-                      <button
-                        onClick={() => setProdottoIspezionato(prod)}
-                        className="text-xs text-blue-600 font-bold hover:text-blue-800 flex items-center w-max p-1 -ml-1 rounded hover:bg-blue-50"
-                      >
-                        <Info size={14} className="mr-1" /> Info nutrizionali
-                      </button>
                     )}
-                  </div>
+                  </span>
                 ))}
               </div>
             </div>
-          ))}
+          </div>
+        </div>
+
+        <div className="grid lg:grid-cols-3 gap-6">
+          {carrelli.map((carrello, idx) => {
+            let borderColor = "border-gray-300";
+            let bgColor = "bg-white";
+            let badgeColor = "bg-gray-600";
+            let iconColorClass = "text-gray-500";
+            let badgeText = idx === 0 ? "Le Tue Scelte" : "Alternativa AI";
+
+            if (idx !== 0) {
+              if (carrello.nome.includes("Km0")) {
+                borderColor = "border-orange-400";
+                bgColor = "bg-orange-50/40";
+                badgeColor = "bg-orange-500";
+                iconColorClass = "text-orange-500";
+                badgeText = "Scelta Km0";
+              } else if (
+                carrello.nome.includes("Etica") ||
+                carrello.nome.includes("Sostenibilità") ||
+                carrello.nome.includes("Sostenibile")
+              ) {
+                borderColor = "border-green-400";
+                bgColor = "bg-green-50/40";
+                badgeColor = "bg-green-500";
+                iconColorClass = "text-green-500";
+                badgeText = "Scelta Sostenibile";
+              } else if (carrello.nome.includes("Risparmio")) {
+                borderColor = "border-blue-400";
+                bgColor = "bg-blue-50/40";
+                badgeColor = "bg-blue-500";
+                iconColorClass = "text-blue-500";
+                badgeText = "Scelta Economica";
+              } else if (carrello.nome.includes("Sponsorizzati")) {
+                borderColor = "border-purple-400";
+                bgColor = "bg-purple-50/40";
+                badgeColor = "bg-purple-500";
+                iconColorClass = "text-purple-500";
+                badgeText = "Proposte Sponsorizzate";
+              }
+            }
+
+            return (
+              <div
+                key={idx}
+                className={`p-6 rounded-3xl border-2 shadow-sm relative overflow-hidden flex flex-col ${borderColor} ${bgColor}`}
+              >
+                <div
+                  className={`absolute top-0 right-0 px-4 py-1.5 rounded-bl-xl font-bold text-xs text-white shadow-sm ${badgeColor}`}
+                >
+                  {badgeText}
+                </div>
+
+                <div className="mb-6 mt-3">
+                  <h3 className="text-2xl font-bold text-gray-800">
+                    {carrello.nome}
+                  </h3>
+                  <div className="flex items-center gap-3 mt-3">
+                    <span
+                      className={`px-3 py-1 rounded-lg text-sm font-bold border flex items-center shadow-sm ${idx === 0 ? "bg-gray-50 border-gray-200 text-gray-700" : "bg-white border-white"}`}
+                    >
+                      <Leaf size={14} className={`mr-1.5 ${iconColorClass}`} />{" "}
+                      Eco Score: {carrello.scoreSos}/10
+                    </span>
+                  </div>
+                </div>
+
+                <div className="p-4 bg-white rounded-2xl shadow-sm mb-6 border border-gray-100 flex justify-between items-center">
+                  <span className="text-gray-500 font-medium text-sm uppercase tracking-wider">
+                    Totale
+                  </span>
+                  <span
+                    className={`text-3xl font-black ${carrello.totale > budget ? "text-red-600" : "text-gray-900"}`}
+                  >
+                    €{carrello.totale.toFixed(2)}
+                  </span>
+                </div>
+
+                <div className="space-y-3 flex-1">
+                  <p className="text-xs font-bold text-gray-400 uppercase tracking-wider pl-1">
+                    Prodotti:
+                  </p>
+                  {carrello.prodotti.map((prod, pIdx) => (
+                    <div
+                      key={pIdx}
+                      className="bg-white p-3 rounded-xl border border-gray-100 shadow-sm flex flex-col gap-2"
+                    >
+                      <div className="flex justify-between items-start">
+                        <div>
+                          <p className="font-bold text-gray-800 text-sm flex items-center flex-wrap gap-1">
+                            {prod.nome}
+                            {idx === 0 && prod.wasGeneric && (
+                              <span className="px-1.5 py-0.5 bg-blue-100 text-blue-700 text-[9px] uppercase rounded-md whitespace-nowrap">
+                                Scelto per te
+                              </span>
+                            )}
+                          </p>
+                          <p className="text-[10px] text-gray-500 uppercase mt-0.5">
+                            {prod.brand} {prod.locale && "• KM0"}
+                          </p>
+                        </div>
+                        <span className="font-bold text-gray-700 bg-gray-50 px-2 py-1 rounded-lg border border-gray-100 text-xs shrink-0 ml-2">
+                          €{prod.prezzo.toFixed(2)}
+                        </span>
+                      </div>
+                      <button
+                        onClick={() => setProdottoIspezionato(prod)}
+                        className="text-xs text-blue-600 font-bold hover:text-blue-800 flex items-center w-max p-1 -ml-1 rounded hover:bg-blue-50 mt-1"
+                      >
+                        <Info size={14} className="mr-1" /> Info nutrizionali
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     );
