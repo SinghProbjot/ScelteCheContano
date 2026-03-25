@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import {
   ShoppingCart,
   Smartphone,
@@ -487,6 +487,11 @@ export default function App() {
 
   const [prodottoIspezionato, setProdottoIspezionato] = useState(null);
   const [isScanning, setIsScanning] = useState(false);
+
+  // Imposta il titolo del tab del browser all'avvio dell'app
+  useEffect(() => {
+    document.title = "Scelte che Cont@no";
+  }, []);
 
   // Utility per gestire la vista corrente senza usare react-router
   const vaiA = (nuovaSchermata) => {
