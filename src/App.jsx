@@ -1740,7 +1740,7 @@ export default function App() {
             onClick={() => vaiA("home")}
           >
             <img
-              src="/logo-scuola.png"
+              src="/public/logo-scuola.png"
               alt="Logo Istituto Locatelli"
               className="h-10 w-auto object-contain group-hover:scale-105 transition-transform"
               onError={(e) => {
