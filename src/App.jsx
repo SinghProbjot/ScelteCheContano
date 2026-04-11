@@ -19,458 +19,511 @@ import {
   Plus,
 } from "lucide-react";
 
-// Finto database locale per i prodotti del prototipo
 const DATABASE_PRODOTTI = [
+  // Pasta
   {
     id: 1,
     categoria: "Pasta",
-    sottocategoria: "Pasta",
-    nome: "Pasta Bio Km0",
-    prezzo: 1.8,
-    sostenibilita: 9,
-    locale: true,
-    brand: "Agricola Bergamo",
+    nome: "Fusilli Integrali",
+    prezzo: 1.45,
+    sostenibilita: 8,
+    locale: false,
+    brand: "Barilla",
     nutrizionale: "A",
-    packaging: "Carta 100% Riciclabile",
+    packaging: "Scatola in Carta",
     valori: {
       kcal: 350,
-      grassi: 1.5,
-      carboidrati: 72,
-      proteine: 13,
+      grassi: 2.5,
+      carboidrati: 65.7,
+      proteine: 13.0,
       sale: 0.01,
     },
   },
   {
     id: 2,
     categoria: "Pasta",
-    sottocategoria: "Pasta",
-    nome: "Pasta Sottomarca",
-    prezzo: 0.6,
-    sostenibilita: 3,
-    locale: false,
-    brand: "Discount X",
-    nutrizionale: "C",
-    packaging: "Plastica Non Riciclabile",
+    nome: "Spaghetti Bio Km0",
+    prezzo: 1.8,
+    sostenibilita: 9,
+    locale: true,
+    brand: "Agricola Locale",
+    nutrizionale: "A",
+    packaging: "Carta 100% Riciclabile",
     valori: {
-      kcal: 360,
-      grassi: 2.0,
-      carboidrati: 75,
-      proteine: 11,
-      sale: 0.05,
+      kcal: 350,
+      grassi: 1.5,
+      carboidrati: 72.0,
+      proteine: 13.0,
+      sale: 0.01,
     },
   },
+
+  // Latte
   {
     id: 3,
-    categoria: "Pasta",
-    sottocategoria: "Pasta",
-    nome: "Pasta Classica",
-    prezzo: 1.1,
-    sostenibilita: 5,
-    locale: false,
-    brand: "Marca Famosa",
-    nutrizionale: "B",
-    packaging: "Plastica Riciclabile",
+    categoria: "Latte",
+    nome: "Latte Parz. Scremato",
+    prezzo: 1.2,
+    sostenibilita: 7,
+    locale: true,
+    brand: "Granarolo",
+    nutrizionale: "A",
+    packaging: "Tetra Pak Riciclabile",
     valori: {
-      kcal: 355,
-      grassi: 1.8,
-      carboidrati: 73,
-      proteine: 12,
-      sale: 0.02,
+      kcal: 46,
+      grassi: 1.6,
+      carboidrati: 4.9,
+      proteine: 3.3,
+      sale: 0.13,
+    },
+  },
+
+  // Biscotti
+  {
+    id: 4,
+    categoria: "Biscotti",
+    nome: "Tarallucci",
+    prezzo: 2.8,
+    sostenibilita: 6,
+    locale: false,
+    brand: "Mulino Bianco",
+    nutrizionale: "C",
+    packaging: "Sacchetto in Carta",
+    valori: {
+      kcal: 471,
+      grassi: 19.0,
+      carboidrati: 65.5,
+      proteine: 7.5,
+      sale: 0.65,
     },
   },
   {
-    id: 10,
-    categoria: "Latte",
-    sottocategoria: "Latte",
-    nome: "Latte Arricchito",
-    prezzo: 1.6,
+    id: 5,
+    categoria: "Biscotti",
+    nome: "Frollini al Cacao",
+    prezzo: 1.2,
+    sostenibilita: 3,
+    locale: false,
+    brand: "Sottomarca",
+    nutrizionale: "E",
+    packaging: "Plastica Multistrato",
+    valori: {
+      kcal: 510,
+      grassi: 25.0,
+      carboidrati: 68.0,
+      proteine: 5.0,
+      sale: 1.2,
+    },
+  },
+
+  // Conserve
+  {
+    id: 6,
+    categoria: "Conserve",
+    nome: "Passata di Pomodoro",
+    prezzo: 1.15,
+    sostenibilita: 9,
+    locale: true,
+    brand: "Mutti",
+    nutrizionale: "A",
+    packaging: "Vetro (Riciclabile)",
+    valori: {
+      kcal: 36,
+      grassi: 0.2,
+      carboidrati: 5.1,
+      proteine: 1.6,
+      sale: 0.5,
+    },
+  },
+
+  // Bevande (Caffè)
+  {
+    id: 7,
+    categoria: "Bevande",
+    nome: "Caffè Qualità Rossa",
+    prezzo: 3.5,
     sostenibilita: 5,
     locale: false,
-    brand: "LatteTop",
+    brand: "Lavazza",
     nutrizionale: "B",
-    packaging: "Bottiglia Plastica",
+    packaging: "Acciaio e Plastica",
     valori: {
-      kcal: 50,
-      grassi: 1.8,
-      carboidrati: 5.2,
-      proteine: 3.5,
+      kcal: 2,
+      grassi: 0.1,
+      carboidrati: 0.3,
+      proteine: 0.2,
+      sale: 0.0,
+    },
+  },
+
+  // Snack
+  {
+    id: 8,
+    categoria: "Snack",
+    nome: "Pringles Original",
+    prezzo: 2.3,
+    sostenibilita: 3,
+    locale: false,
+    brand: "Pringles",
+    nutrizionale: "D",
+    packaging: "Tubo Multimateriale",
+    valori: {
+      kcal: 518,
+      grassi: 29.0,
+      carboidrati: 56.0,
+      proteine: 6.0,
+      sale: 1.3,
+    },
+  },
+
+  // Dolci
+  {
+    id: 9,
+    categoria: "Dolci",
+    nome: "Nutella",
+    prezzo: 4.5,
+    sostenibilita: 4,
+    locale: false,
+    brand: "Ferrero",
+    nutrizionale: "E",
+    packaging: "Vetro e Tappo Plastica",
+    valori: {
+      kcal: 539,
+      grassi: 30.9,
+      carboidrati: 57.5,
+      proteine: 6.3,
       sale: 0.1,
     },
   },
 
+  // Formaggi
   {
-    id: 4,
-    categoria: "Latte",
-    sottocategoria: "Latte",
-    nome: "Latte Fresco Val Seriana",
-    prezzo: 1.9,
-    sostenibilita: 8,
-    locale: true,
-    brand: "Latteria Locale",
-    nutrizionale: "A",
-    packaging: "Vetro a Rendere",
+    id: 10,
+    categoria: "Formaggi",
+    nome: "Philadelphia",
+    prezzo: 3.45,
+    sostenibilita: 6,
+    locale: false,
+    brand: "Mondelēz",
+    nutrizionale: "D",
+    packaging: "Vaschetta in Plastica",
     valori: {
-      kcal: 64,
-      grassi: 3.6,
+      kcal: 235,
+      grassi: 22.0,
+      carboidrati: 4.0,
+      proteine: 5.4,
+      sale: 0.8,
+    },
+  },
+
+  // Carne
+  {
+    id: 11,
+    categoria: "Carne",
+    nome: "Petto di Pollo",
+    prezzo: 4.5,
+    sostenibilita: 4,
+    locale: false,
+    brand: "AIA",
+    nutrizionale: "B",
+    packaging: "Vassoio in Polistirolo",
+    valori: {
+      kcal: 100,
+      grassi: 1.5,
+      carboidrati: 0.0,
+      proteine: 22.0,
+      sale: 0.1,
+    },
+  },
+
+  // --- PRODOTTI "FINTI" PER BILANCIARE L'ALGORITMO (Super-Economici vs Eco/Km0) ---
+  // Pasta
+  {
+    id: 101,
+    categoria: "Pasta",
+    nome: "Pasta Sottomarca",
+    prezzo: 0.5,
+    sostenibilita: 2,
+    locale: false,
+    brand: "Discount",
+    nutrizionale: "C",
+    packaging: "Plastica",
+    valori: {
+      kcal: 360,
+      grassi: 1.0,
+      carboidrati: 75.0,
+      proteine: 11.0,
+      sale: 0.05,
+    },
+  },
+  // Latte
+  {
+    id: 102,
+    categoria: "Latte",
+    nome: "Latte UHT Sottomarca",
+    prezzo: 0.7,
+    sostenibilita: 2,
+    locale: false,
+    brand: "Discount",
+    nutrizionale: "C",
+    packaging: "Plastica",
+    valori: {
+      kcal: 47,
+      grassi: 1.5,
       carboidrati: 4.8,
       proteine: 3.2,
       sale: 0.1,
     },
   },
   {
-    id: 5,
+    id: 103,
     categoria: "Latte",
-    sottocategoria: "Latte",
-    nome: "Latte UHT",
-    prezzo: 0.9,
-    sostenibilita: 4,
-    locale: false,
-    brand: "Multinazionale",
-    nutrizionale: "B",
-    packaging: "TetraPak Misto",
+    nome: "Latte Crudo Fattoria",
+    prezzo: 2.5,
+    sostenibilita: 10,
+    locale: true,
+    brand: "Agricola Locale",
+    nutrizionale: "A",
+    packaging: "Vetro a rendere",
     valori: {
-      kcal: 47,
-      grassi: 1.5,
-      carboidrati: 5.0,
-      proteine: 3.4,
+      kcal: 65,
+      grassi: 3.6,
+      carboidrati: 4.8,
+      proteine: 3.3,
       sale: 0.1,
     },
   },
-
+  // Biscotti
   {
-    id: 6,
+    id: 104,
     categoria: "Biscotti",
-    sottocategoria: "Biscotti",
-    nome: "Frollini Artigianali",
-    prezzo: 3.5,
-    sostenibilita: 8,
-    locale: true,
-    brand: "Forno di Città",
-    nutrizionale: "C",
-    packaging: "Sacchetto di Carta",
-    valori: { kcal: 450, grassi: 18, carboidrati: 65, proteine: 6, sale: 0.5 },
-  },
-  {
-    id: 7,
-    categoria: "Biscotti",
-    sottocategoria: "Biscotti",
-    nome: "Biscotti Sottomarca",
-    prezzo: 1.2,
-    sostenibilita: 2,
-    locale: false,
-    brand: "Industria Dolciaria",
-    nutrizionale: "E",
-    packaging: "Plastica Multistrato",
-    valori: { kcal: 510, grassi: 25, carboidrati: 68, proteine: 5, sale: 1.2 },
-  },
-  {
-    id: 11,
-    categoria: "Biscotti",
-    sottocategoria: "Biscotti",
-    nome: "Frollini Classici",
-    prezzo: 2.2,
-    sostenibilita: 4,
-    locale: false,
-    brand: "Mulino Famoso",
-    nutrizionale: "D",
-    packaging: "Plastica Riciclabile",
-    valori: {
-      kcal: 480,
-      grassi: 20,
-      carboidrati: 66,
-      proteine: 5.5,
-      sale: 0.8,
-    },
-  },
-
-  {
-    id: 8,
-    categoria: "Frutta",
-    sottocategoria: "Mela",
-    nome: "Mele del Trentino",
-    prezzo: 2.0,
-    sostenibilita: 9,
-    locale: true,
-    brand: "Consorzio Mela",
-    nutrizionale: "A",
-    packaging: "Sfuso",
-    valori: {
-      kcal: 52,
-      grassi: 0.2,
-      carboidrati: 14,
-      proteine: 0.3,
-      sale: 0.0,
-    },
-  },
-  {
-    id: 9,
-    categoria: "Frutta",
-    sottocategoria: "Banana",
-    nome: "Banane Sudamerica",
-    prezzo: 1.5,
-    sostenibilita: 4,
-    locale: false,
-    brand: "Import Export",
-    nutrizionale: "A",
-    packaging: "Retina di Plastica",
-    valori: {
-      kcal: 89,
-      grassi: 0.3,
-      carboidrati: 23,
-      proteine: 1.1,
-      sale: 0.01,
-    },
-  },
-  {
-    id: 12,
-    categoria: "Frutta",
-    sottocategoria: "Fragola",
-    nome: "Fragole Esotiche",
-    prezzo: 3.5,
-    sostenibilita: 3,
-    locale: false,
-    brand: "GigaFruit",
-    nutrizionale: "A",
-    packaging: "Cestino Plastica Rigida",
-    valori: {
-      kcal: 32,
-      grassi: 0.3,
-      carboidrati: 7.7,
-      proteine: 0.7,
-      sale: 0.0,
-    },
-  },
-  {
-    id: 13,
-    categoria: "Pasta",
-    sottocategoria: "Pasta",
-    nome: "Pasta Integrale Bio",
-    prezzo: 1.3,
-    sostenibilita: 8,
-    locale: false,
-    brand: "Natura Vera",
-    nutrizionale: "A",
-    packaging: "Cartone Riciclato",
-    valori: {
-      kcal: 340,
-      grassi: 2.0,
-      carboidrati: 65,
-      proteine: 14,
-      sale: 0.01,
-    },
-  },
-  {
-    id: 14,
-    categoria: "Latte",
-    sottocategoria: "Latte",
-    nome: "Bevanda di Avena Bio",
-    prezzo: 1.8,
-    sostenibilita: 9,
-    locale: false,
-    brand: "EcoSoy",
-    nutrizionale: "A",
-    packaging: "TetraPak Eco",
-    valori: {
-      kcal: 45,
-      grassi: 1.5,
-      carboidrati: 6.0,
-      proteine: 3.0,
-      sale: 0.05,
-    },
-  },
-  {
-    id: 15,
-    categoria: "Biscotti",
-    sottocategoria: "Biscotti",
-    nome: "Biscotti Vegani",
-    prezzo: 2.6,
-    sostenibilita: 8,
-    locale: false,
-    brand: "Dolci Natura",
-    nutrizionale: "B",
-    packaging: "Carta Riciclabile",
-    valori: { kcal: 430, grassi: 14, carboidrati: 68, proteine: 7, sale: 0.3 },
-  },
-  {
-    id: 16,
-    categoria: "Frutta",
-    sottocategoria: "Arancia",
-    nome: "Arance Bio",
-    prezzo: 2.2,
-    sostenibilita: 8,
-    locale: false,
-    brand: "BioFrutta",
-    nutrizionale: "A",
-    packaging: "Rete di Cotone",
-    valori: {
-      kcal: 47,
-      grassi: 0.1,
-      carboidrati: 12,
-      proteine: 0.9,
-      sale: 0.0,
-    },
-  },
-  {
-    id: 17,
-    categoria: "Frutta",
-    sottocategoria: "Mela",
-    nome: "Mele Sottomarca",
-    prezzo: 1.2,
-    sostenibilita: 3,
-    locale: false,
-    brand: "Discount Frutta",
-    nutrizionale: "A",
-    packaging: "Retina di Plastica",
-    valori: {
-      kcal: 52,
-      grassi: 0.2,
-      carboidrati: 14,
-      proteine: 0.3,
-      sale: 0.0,
-    },
-  },
-  {
-    id: 18,
-    categoria: "Frutta",
-    sottocategoria: "Mela",
-    nome: "Mele Golden",
-    prezzo: 1.6,
-    sostenibilita: 5,
-    locale: false,
-    brand: "Marca Famosa",
-    nutrizionale: "A",
-    packaging: "Vassoio di Cartone",
-    valori: {
-      kcal: 52,
-      grassi: 0.2,
-      carboidrati: 14,
-      proteine: 0.3,
-      sale: 0.0,
-    },
-  },
-  {
-    id: 19,
-    categoria: "Frutta",
-    sottocategoria: "Banana",
-    nome: "Banane Bio Fairtrade",
-    prezzo: 2.5,
-    sostenibilita: 8,
-    locale: false,
-    brand: "EcoBanana",
-    nutrizionale: "A",
-    packaging: "Fascetta di Carta",
-    valori: {
-      kcal: 89,
-      grassi: 0.3,
-      carboidrati: 23,
-      proteine: 1.1,
-      sale: 0.01,
-    },
-  },
-  {
-    id: 20,
-    categoria: "Frutta",
-    sottocategoria: "Banana",
-    nome: "Banane Primo Prezzo",
-    prezzo: 0.9,
-    sostenibilita: 2,
-    locale: false,
-    brand: "Discount Frutta",
-    nutrizionale: "A",
-    packaging: "Sacchetto di Plastica",
-    valori: {
-      kcal: 89,
-      grassi: 0.3,
-      carboidrati: 23,
-      proteine: 1.1,
-      sale: 0.01,
-    },
-  },
-  {
-    id: 21,
-    categoria: "Frutta",
-    sottocategoria: "Fragola",
-    nome: "Fragole Locali Bio",
+    nome: "Biscotti Artigianali Bio",
     prezzo: 4.5,
     sostenibilita: 9,
     locale: true,
-    brand: "Agricola Bergamo",
-    nutrizionale: "A",
-    packaging: "Cestino di Cartone",
+    brand: "Forno Locale",
+    nutrizionale: "B",
+    packaging: "Sacchetto in Carta",
     valori: {
-      kcal: 32,
-      grassi: 0.3,
-      carboidrati: 7.7,
-      proteine: 0.7,
-      sale: 0.0,
+      kcal: 430,
+      grassi: 15.0,
+      carboidrati: 68.0,
+      proteine: 8.0,
+      sale: 0.1,
     },
   },
+  // Conserve
   {
-    id: 22,
-    categoria: "Frutta",
-    sottocategoria: "Fragola",
-    nome: "Fragole Standard",
-    prezzo: 2.5,
-    sostenibilita: 4,
+    id: 105,
+    categoria: "Conserve",
+    nome: "Passata Discount",
+    prezzo: 0.4,
+    sostenibilita: 2,
     locale: false,
-    brand: "Serra Gialla",
-    nutrizionale: "A",
-    packaging: "Cestino Plastica Rigida",
+    brand: "Discount",
+    nutrizionale: "C",
+    packaging: "Latta",
     valori: {
-      kcal: 32,
-      grassi: 0.3,
-      carboidrati: 7.7,
-      proteine: 0.7,
-      sale: 0.0,
+      kcal: 35,
+      grassi: 0.1,
+      carboidrati: 5.0,
+      proteine: 1.5,
+      sale: 1.0,
+    },
+  },
+  // Bevande
+  {
+    id: 106,
+    categoria: "Bevande",
+    nome: "Bevanda al Caffè",
+    prezzo: 0.8,
+    sostenibilita: 2,
+    locale: false,
+    brand: "Discount",
+    nutrizionale: "E",
+    packaging: "Plastica",
+    valori: {
+      kcal: 80,
+      grassi: 2.0,
+      carboidrati: 12.0,
+      proteine: 1.0,
+      sale: 0.2,
     },
   },
   {
-    id: 23,
-    categoria: "Frutta",
-    sottocategoria: "Arancia",
-    nome: "Arance di Sicilia",
-    prezzo: 2.0,
+    id: 107,
+    categoria: "Bevande",
+    nome: "Caffè Equosolidale",
+    prezzo: 5.5,
+    sostenibilita: 9,
+    locale: false,
+    brand: "FairTrade",
+    nutrizionale: "A",
+    packaging: "Carta",
+    valori: {
+      kcal: 2,
+      grassi: 0.1,
+      carboidrati: 0.3,
+      proteine: 0.2,
+      sale: 0.0,
+    },
+  },
+  // Snack
+  {
+    id: 108,
+    categoria: "Snack",
+    nome: "Chips Artigianali Bio",
+    prezzo: 3.5,
     sostenibilita: 8,
     locale: true,
-    brand: "Agrumi Sud",
-    nutrizionale: "A",
-    packaging: "Rete di Cotone",
+    brand: "Agricola Locale",
+    nutrizionale: "C",
+    packaging: "Carta",
     valori: {
-      kcal: 47,
-      grassi: 0.1,
-      carboidrati: 12,
-      proteine: 0.9,
-      sale: 0.0,
+      kcal: 480,
+      grassi: 20.0,
+      carboidrati: 60.0,
+      proteine: 6.0,
+      sale: 0.5,
+    },
+  },
+  // Dolci
+  {
+    id: 109,
+    categoria: "Dolci",
+    nome: "Crema Cacao Discount",
+    prezzo: 1.5,
+    sostenibilita: 1,
+    locale: false,
+    brand: "Discount",
+    nutrizionale: "E",
+    packaging: "Plastica",
+    valori: {
+      kcal: 550,
+      grassi: 35.0,
+      carboidrati: 55.0,
+      proteine: 5.0,
+      sale: 0.2,
     },
   },
   {
-    id: 24,
-    categoria: "Frutta",
-    sottocategoria: "Arancia",
-    nome: "Arance Importate",
-    prezzo: 1.2,
-    sostenibilita: 3,
-    locale: false,
-    brand: "Global Fruit",
-    nutrizionale: "A",
-    packaging: "Rete di Plastica",
+    id: 110,
+    categoria: "Dolci",
+    nome: "Crema Nocciole Artigianale",
+    prezzo: 7.0,
+    sostenibilita: 9,
+    locale: true,
+    brand: "Agricola Locale",
+    nutrizionale: "C",
+    packaging: "Vetro",
     valori: {
-      kcal: 47,
-      grassi: 0.1,
-      carboidrati: 12,
-      proteine: 0.9,
-      sale: 0.0,
+      kcal: 520,
+      grassi: 30.0,
+      carboidrati: 50.0,
+      proteine: 8.0,
+      sale: 0.05,
+    },
+  },
+  // Formaggi
+  {
+    id: 111,
+    categoria: "Formaggi",
+    nome: "Fettine Fese Sottomarca",
+    prezzo: 0.9,
+    sostenibilita: 1,
+    locale: false,
+    brand: "Discount",
+    nutrizionale: "D",
+    packaging: "Plastica",
+    valori: {
+      kcal: 250,
+      grassi: 20.0,
+      carboidrati: 5.0,
+      proteine: 10.0,
+      sale: 2.0,
+    },
+  },
+  {
+    id: 112,
+    categoria: "Formaggi",
+    nome: "Formaggio di Malga",
+    prezzo: 6.5,
+    sostenibilita: 9,
+    locale: true,
+    brand: "Caseificio Locale",
+    nutrizionale: "C",
+    packaging: "Carta",
+    valori: {
+      kcal: 380,
+      grassi: 30.0,
+      carboidrati: 1.0,
+      proteine: 25.0,
+      sale: 1.5,
+    },
+  },
+  // Carne
+  {
+    id: 113,
+    categoria: "Carne",
+    nome: "Hamburger Scongelato",
+    prezzo: 1.5,
+    sostenibilita: 1,
+    locale: false,
+    brand: "Discount",
+    nutrizionale: "D",
+    packaging: "Plastica",
+    valori: {
+      kcal: 280,
+      grassi: 22.0,
+      carboidrati: 2.0,
+      proteine: 15.0,
+      sale: 1.5,
+    },
+  },
+  {
+    id: 114,
+    categoria: "Carne",
+    nome: "Pollo Allevato all'Aperto",
+    prezzo: 9.5,
+    sostenibilita: 8,
+    locale: true,
+    brand: "Agricola Locale",
+    nutrizionale: "A",
+    packaging: "Carta",
+    valori: {
+      kcal: 120,
+      grassi: 2.5,
+      carboidrati: 0.0,
+      proteine: 24.0,
+      sale: 0.1,
     },
   },
 ];
 
-const CATEGORIE_DISPONIBILI = ["Pasta", "Latte", "Biscotti", "Frutta"];
+// Aggiorniamo le categorie disponibili per il menu a tendina in base ai nuovi dati
+const CATEGORIE_DISPONIBILI = [
+  "Pasta",
+  "Latte",
+  "Biscotti",
+  "Conserve",
+  "Bevande",
+  "Snack",
+  "Dolci",
+  "Formaggi",
+  "Carne",
+];
 
+// Aggiorniamo le stime di calcolo per i prodotti generici inseriti dall'utente
 const PREZZI_MEDI = {
-  Pasta: 1.2,
+  Pasta: 1.5,
   Latte: 1.4,
   Biscotti: 2.3,
-  Frutta: 1.8,
+  Conserve: 1.15,
+  Bevande: 2.5,
+  Snack: 2.0,
+  Dolci: 4.0,
+  Formaggi: 3.2,
+  Carne: 5.0,
 };
 
 // Componente Root
@@ -575,16 +628,16 @@ export default function App() {
       if (availableProds.length === 0) availableProds = prods; // Fallback se non ci sono alternative
 
       if (tipo === "etica") {
-        const bestAv = [...availableProds].sort(
-          (a, b) => b.sostenibilita - a.sostenibilita,
-        )[0];
-        // Evitiamo che il carrello etico abbia uno score basso solo per non ripetersi
-        if (bestAv && bestAv.sostenibilita <= 5) {
-          return [...prods].sort(
-            (a, b) => b.sostenibilita - a.sostenibilita,
-          )[0];
-        }
-        return bestAv;
+        return [...availableProds].sort((a, b) => {
+          let scoreA = a.sostenibilita;
+          let scoreB = b.sostenibilita;
+          // Se clicchi su "Locali (Km0)", l'algoritmo dà un bonus per farli apparire nella Scelta Etica
+          if (filtri.locale) {
+            scoreA += a.locale ? 5 : 0;
+            scoreB += b.locale ? 5 : 0;
+          }
+          return scoreB - scoreA;
+        })[0];
       }
 
       if (tipo === "km0") {
@@ -592,12 +645,6 @@ export default function App() {
         if (locals.length > 0) {
           return locals.sort((a, b) => b.sostenibilita - a.sostenibilita)[0];
         } else {
-          // Se non c'è km0 disponibile, ignora l'esclusione e ripescalo dai totali
-          const allLocals = prods.filter((p) => p.locale);
-          if (allLocals.length > 0)
-            return allLocals.sort(
-              (a, b) => b.sostenibilita - a.sostenibilita,
-            )[0];
           return [...availableProds].sort(
             (a, b) => b.sostenibilita - a.sostenibilita,
           )[0];
@@ -605,29 +652,14 @@ export default function App() {
       }
 
       if (tipo === "risparmio") {
-        const bestAv = [...availableProds].sort(
-          (a, b) => a.prezzo - b.prezzo,
-        )[0];
-        const absBest = [...prods].sort((a, b) => a.prezzo - b.prezzo)[0];
-        // Evitiamo che il carrello economico proponga un prodotto costoso solo per differenziarsi
-        if (bestAv && absBest && bestAv.prezzo > absBest.prezzo * 1.5) {
-          return absBest;
-        }
-        return bestAv;
+        return [...availableProds].sort((a, b) => a.prezzo - b.prezzo)[0];
       }
 
       if (tipo === "commerciale") {
-        const cheapest = [...prods].sort((a, b) => a.prezzo - b.prezzo)[0];
-        const eco = [...prods].sort(
-          (a, b) => b.sostenibilita - a.sostenibilita,
-        )[0];
-        const remaining = availableProds.filter(
-          (p) => p.id !== cheapest.id && p.id !== eco.id,
-        );
-        return remaining.length > 0
-          ? remaining[0]
-          : availableProds.find((p) => p.id !== cheapest.id) ||
-              availableProds[0];
+        // Mix tra economico ma con sostenibilità non altissima per simulare un brand commerciale
+        const list = [...availableProds].sort((a, b) => a.prezzo - b.prezzo);
+        const nonEco = list.find((p) => p.sostenibilita < 7);
+        return nonEco || list[0];
       }
       return availableProds[0];
     };
@@ -667,6 +699,15 @@ export default function App() {
         : "Estrema Sostenibilità";
     }
 
+    // Funzione per capire se il carrello generato rispecchia i filtri scelti
+    const checkMatch = (tipo) => {
+      if (filtri.risparmio && tipo === "risparmio") return true;
+      if (filtri.sostenibile && (tipo === "etica" || tipo === "km0"))
+        return true;
+      if (filtri.locale && (tipo === "km0" || tipo === "etica")) return true;
+      return false;
+    };
+
     const carrelloUtente = {
       nome: "Le Tue Scelte",
       prodotti: [...listaSpesa],
@@ -678,12 +719,14 @@ export default function App() {
       prodotti: [],
       totale: 0,
       scoreSos: 0,
+      isMatchFiltri: checkMatch(tipoAlt1),
     };
     const carrelloSostenibile = {
       nome: nomeAlt2,
       prodotti: [],
       totale: 0,
       scoreSos: 0,
+      isMatchFiltri: checkMatch(tipoAlt2),
     };
 
     carrelloUtente.prodotti = []; // Svuotiamo i vecchi dati, li popoliamo ottimizzati
@@ -691,30 +734,19 @@ export default function App() {
     carrelloUtente.scoreSos = 0;
 
     listaSpesa.forEach((itemScelto) => {
-      const chiaveFiltro = itemScelto.isGeneric
-        ? "categoria"
-        : "sottocategoria";
-      const valoreFiltro = itemScelto.isGeneric
-        ? itemScelto.categoria
-        : itemScelto.sottocategoria;
-
+      // Cerca SEMPRE E SOLO nella stessa categoria
       let prodottiCat = DATABASE_PRODOTTI.filter(
-        (p) => p[chiaveFiltro] === valoreFiltro,
+        (p) => p.categoria === itemScelto.categoria,
       );
-
-      if (prodottiCat.length < 3 && !itemScelto.isGeneric) {
-        prodottiCat = DATABASE_PRODOTTI.filter(
-          (p) => p.categoria === itemScelto.categoria,
-        );
-      }
 
       // --- 1. PRODOTTO UTENTE ---
       // Se l'ha selezionato esplicitamente lo manteniamo. Se generico, l'IA seleziona con i filtri
       let prodUtente = itemScelto;
       if (itemScelto.isGeneric) {
-        prodUtente = [...prodottiCat].sort(
-          (a, b) => calcolaScoreUtente(b) - calcolaScoreUtente(a),
-        )[0];
+        prodUtente =
+          [...prodottiCat].sort(
+            (a, b) => calcolaScoreUtente(b) - calcolaScoreUtente(a),
+          )[0] || itemScelto;
       }
 
       if (prodUtente) {
@@ -728,8 +760,59 @@ export default function App() {
 
       // --- 2. PRODOTTO ALT 1 ---
       let prodAlt1 = pickProd(tipoAlt1, prodottiCat, [prodUtente?.id]);
+      let alt1Same = false;
+
+      // Controllo: se la scelta dell'utente è oggettivamente migliore dell'alternativa, teniamo quella dell'utente
+      if (prodUtente && prodAlt1) {
+        if (
+          tipoAlt1 === "etica" &&
+          prodUtente.sostenibilita > prodAlt1.sostenibilita
+        ) {
+          prodAlt1 = prodUtente;
+          alt1Same = true;
+        } else if (
+          tipoAlt1 === "risparmio" &&
+          prodUtente.prezzo < prodAlt1.prezzo
+        ) {
+          prodAlt1 = prodUtente;
+          alt1Same = true;
+        } else if (
+          tipoAlt1 === "km0" &&
+          prodUtente.locale &&
+          !prodAlt1.locale
+        ) {
+          prodAlt1 = prodUtente;
+          alt1Same = true;
+        }
+      }
+
       if (prodAlt1) {
-        carrelloEconomico.prodotti.push(prodAlt1);
+        let motivazione = "Scelta dell'algoritmo.";
+        if (alt1Same) {
+          motivazione =
+            "Ottima scelta! Hai già nel carrello il prodotto migliore per questo parametro.";
+        } else if (tipoAlt1 === "risparmio") {
+          const risparmio = prodUtente
+            ? prodUtente.prezzo - prodAlt1.prezzo
+            : 0;
+          if (risparmio > 0)
+            motivazione = `Risparmi €${risparmio.toFixed(2)} rispetto alla tua scelta.`;
+          else motivazione = "Il prodotto più economico disponibile.";
+        } else if (tipoAlt1 === "etica") {
+          motivazione = `Miglior Eco-Score della categoria (${prodAlt1.sostenibilita}/10)`;
+          if (filtri.locale && prodAlt1.locale)
+            motivazione += " e prodotto a Km0.";
+        } else if (tipoAlt1 === "km0") {
+          motivazione = "Prodotto a Km0, supporta l'economia locale.";
+        } else if (tipoAlt1 === "commerciale") {
+          motivazione =
+            "Scelta Sponsorizzata: l'azienda ha pagato per essere in evidenza.";
+        }
+
+        carrelloEconomico.prodotti.push({
+          ...prodAlt1,
+          motivazioneAI: motivazione,
+        });
         carrelloEconomico.totale += prodAlt1.prezzo;
         carrelloEconomico.scoreSos += prodAlt1.sostenibilita;
       }
@@ -739,8 +822,59 @@ export default function App() {
         prodUtente?.id,
         prodAlt1?.id,
       ]);
+      let alt2Same = false;
+
+      // Controllo: se la scelta dell'utente è oggettivamente migliore dell'alternativa, teniamo quella dell'utente
+      if (prodUtente && prodAlt2) {
+        if (
+          tipoAlt2 === "etica" &&
+          prodUtente.sostenibilita > prodAlt2.sostenibilita
+        ) {
+          prodAlt2 = prodUtente;
+          alt2Same = true;
+        } else if (
+          tipoAlt2 === "risparmio" &&
+          prodUtente.prezzo < prodAlt2.prezzo
+        ) {
+          prodAlt2 = prodUtente;
+          alt2Same = true;
+        } else if (
+          tipoAlt2 === "km0" &&
+          prodUtente.locale &&
+          !prodAlt2.locale
+        ) {
+          prodAlt2 = prodUtente;
+          alt2Same = true;
+        }
+      }
+
       if (prodAlt2) {
-        carrelloSostenibile.prodotti.push(prodAlt2);
+        let motivazione = "Scelta dell'algoritmo.";
+        if (alt2Same) {
+          motivazione =
+            "Ottima scelta! Hai già nel carrello il prodotto migliore per questo parametro.";
+        } else if (tipoAlt2 === "risparmio") {
+          const risparmio = prodUtente
+            ? prodUtente.prezzo - prodAlt2.prezzo
+            : 0;
+          if (risparmio > 0)
+            motivazione = `Risparmi €${risparmio.toFixed(2)} rispetto alla tua scelta.`;
+          else motivazione = "Il prodotto più economico in alternativa.";
+        } else if (tipoAlt2 === "etica") {
+          motivazione = `Miglior Eco-Score della categoria (${prodAlt2.sostenibilita}/10)`;
+          if (filtri.locale && prodAlt2.locale)
+            motivazione += " e prodotto a Km0.";
+        } else if (tipoAlt2 === "km0") {
+          motivazione = "Prodotto a Km0, supporta l'economia locale.";
+        } else if (tipoAlt2 === "commerciale") {
+          motivazione =
+            "Scelta Sponsorizzata: l'azienda ha pagato per essere in evidenza.";
+        }
+
+        carrelloSostenibile.prodotti.push({
+          ...prodAlt2,
+          motivazioneAI: motivazione,
+        });
         carrelloSostenibile.totale += prodAlt2.prezzo;
         carrelloSostenibile.scoreSos += prodAlt2.sostenibilita;
       }
@@ -1384,6 +1518,27 @@ export default function App() {
           </button>
         </div>
 
+        <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-8 rounded-r-xl shadow-sm">
+          <div className="flex">
+            <div className="flex-shrink-0">
+              <AlertTriangle className="h-5 w-5 text-yellow-400" />
+            </div>
+            <div className="ml-3">
+              <p className="text-sm text-yellow-800 font-bold">
+                Nota sui risultati dell'Algoritmo
+              </p>
+              <p className="text-sm text-yellow-700 mt-1">
+                I dati di questa applicazione sono stati creati dagli studenti
+                per un esperimento didattico. Trattandosi di un dataset
+                limitato, l'algoritmo potrebbe restituire incoerenze,
+                specialmente per prodotti molto specifici senza alternative in
+                archivio. In un contesto reale con i veri dati dei supermercati,
+                l'algoritmo lavorerebbe in modo impeccabile.
+              </p>
+            </div>
+          </div>
+        </div>
+
         <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 mb-8">
           <h3 className="font-bold text-gray-800 mb-4 text-lg">
             Riepilogo Profilazione
@@ -1391,9 +1546,12 @@ export default function App() {
           <div className="flex flex-col sm:flex-row gap-6">
             <div className="flex-1">
               <span className="text-xs text-gray-500 font-bold uppercase tracking-wider block mb-2">
-                I tuoi Filtri:
+                I tuoi Filtri e Budget:
               </span>
               <div className="flex flex-wrap gap-2">
+                <span className="px-3 py-1.5 bg-indigo-100 text-indigo-800 text-xs font-bold rounded-lg flex items-center gap-1.5 border border-indigo-200">
+                  Budget: €{budget.toFixed(2)}
+                </span>
                 {filtri.locale && (
                   <span className="px-3 py-1.5 bg-orange-100 text-orange-700 text-xs font-bold rounded-lg flex items-center gap-1.5 border border-orange-200">
                     <MapPin size={14} /> Km0 / Locale
@@ -1490,7 +1648,13 @@ export default function App() {
                   {badgeText}
                 </div>
 
-                <div className="mb-6 mt-3">
+                {carrello.isMatchFiltri && (
+                  <div className="absolute top-0 left-0 px-3 py-1.5 bg-yellow-400 text-yellow-900 font-bold text-xs rounded-br-xl shadow-sm flex items-center gap-1 z-10">
+                    🎯 In linea coi tuoi filtri
+                  </div>
+                )}
+
+                <div className="mb-6 mt-6">
                   <h3 className="text-2xl font-bold text-gray-800">
                     {carrello.nome}
                   </h3>
@@ -1505,9 +1669,16 @@ export default function App() {
                 </div>
 
                 <div className="p-4 bg-white rounded-2xl shadow-sm mb-6 border border-gray-100 flex justify-between items-center">
-                  <span className="text-gray-500 font-medium text-sm uppercase tracking-wider">
-                    Totale
-                  </span>
+                  <div className="flex flex-col">
+                    <span className="text-gray-500 font-medium text-sm uppercase tracking-wider">
+                      Totale
+                    </span>
+                    {carrello.totale > budget && (
+                      <span className="text-red-500 text-[10px] font-bold uppercase mt-0.5">
+                        Fuori Budget
+                      </span>
+                    )}
+                  </div>
                   <span
                     className={`text-3xl font-black ${carrello.totale > budget ? "text-red-600" : "text-gray-900"}`}
                   >
@@ -1548,6 +1719,15 @@ export default function App() {
                       >
                         <Info size={14} className="mr-1" /> Info nutrizionali
                       </button>
+
+                      {prod.motivazioneAI && (
+                        <div className="mt-2 bg-indigo-50/50 p-2 rounded-lg border border-indigo-100 flex items-start gap-2">
+                          <span className="text-sm">🤖</span>
+                          <p className="text-xs text-indigo-800 font-medium leading-tight pt-0.5">
+                            {prod.motivazioneAI}
+                          </p>
+                        </div>
+                      )}
                     </div>
                   ))}
                 </div>
