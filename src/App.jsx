@@ -18,6 +18,7 @@ import {
   Activity,
   Plus,
 } from "lucide-react";
+import logoScuola from "./assets/logo-scuola.png";
 
 const DATABASE_PRODOTTI = [
   // Pasta
@@ -1920,8 +1921,8 @@ export default function App() {
             onClick={() => vaiA("home")}
           >
             <img
-              src="/public/logo-scuola.png"
-              alt="Logo Istituto Locatelli"
+              src={logoScuola}
+              alt="Logo Istituto"
               className="h-10 w-auto object-contain group-hover:scale-105 transition-transform"
               onError={(e) => {
                 e.target.onerror = null;
